@@ -1,0 +1,121 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: "Melbourne Cocoaheads"
+  description: |
+    API for accessing published Events on the melbournecocoaheads.com website
+  contact:
+    name: Jesse Collis
+    email: jesse@melbournecocoaheads.com
+    url: http://jcmultimedia.com.au
+  license:
+    name: MIT
+    url: http://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+host: melbournecocoaheads.com
+basePath: /api
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /events:
+    get:
+      description: Returns all published, upcoming events.
+      operationId: getEvents
+      responses:
+        200:
+          description: lists of hacknights and meetups
+          schema:
+            properties:
+              events:
+                type: array
+                items:
+                  $ref: '#/definitions/Event'
+          examples:
+            application/json:
+              events:
+                - type: "meetup"
+                  title: "Melbourne CocoaHeads #104"
+                  subtitle: "Melbourne CocoaHeads Meetup"
+                  starts_at: "2017-04-13 08:30:00"
+                  ends_at: "2017-04-13 11:30:00"
+                  location: "Outware"
+                  location_link: "http://www.outware.com.au/contact"
+                  address_display: "Level 3, 469 La Trobe Street, Melbourne"
+                  address: "Level 3, 469 La Trobe Street, Melbourne VIC 3000"
+                  lat: -37.8126541
+                  lng: 144.9551303
+                  tickets: "https://www.meetup.com/Melbourne-CocoaHeads/"
+                  contact: "mailto:jesse@jcmultimedia.com.au"
+                  contact_name: "Jesse Collis"
+                  url: "https://www.melbournecocoaheads.com/events/meetup-2017-04-13"
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  Event:
+    required:
+      - type
+      - title
+      - starts_at
+      - location
+      - location_link
+      - address_display
+      - address
+      - lat
+      - lng
+      - tickets
+      - contact
+      - contact_name
+    properties:
+      type:
+        type: string
+        enum:
+          - meetup
+          - hacknight
+      title:
+        type: string
+      subtitle:
+        type: string
+      starts_at:
+        type: string
+        format: dateTime
+      ends_at:
+        type: string
+        format: dateTime
+      location:
+        type: string
+      location_link:
+        type: string
+        format: uri
+      address_display: 
+        type: string
+      address:
+        type: string
+      lat: 
+        type: number
+        format: double
+      lng:
+        type: number
+        format: double
+      tickets:
+        type: string
+        format: uri
+      contact:
+        type: string
+      url:
+        type: string
+        format: uri
+  Error:
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
