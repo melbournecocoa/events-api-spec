@@ -1,2 +1,5 @@
-# events-api-spec
-Melbourne CocoaHeads events api swagger specification
+# Melbourne CocoaHeads Events API Spec
+
+## Online Documentation
+
+Documentation is available at http://docs.melbournecocoaheads.apiary.io
