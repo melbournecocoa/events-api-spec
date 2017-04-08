@@ -1,0 +1,22 @@
+{
+  "name": "events-api-spec",
+  "version": "1.0.0",
+  "description": "Melbourne Cocoaheads Events API Spec",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/.bin/dredd --config dredd.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melbournecocoa/events-api-spec.git"
+  },
+  "author": "Jesse Collis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/melbournecocoa/events-api-spec/issues"
+  },
+  "homepage": "https://github.com/melbournecocoa/events-api-spec#readme",
+  "dependencies": {
+    "dredd": "^3.4.1"
+  }
+}
