@@ -51,10 +51,6 @@ paths:
                   contact: "mailto:jesse@jcmultimedia.com.au"
                   contact_name: "Jesse Collis"
                   url: "https://www.melbournecocoaheads.com/events/meetup-2017-04-13"
-        default:
-          description: unexpected error
-          schema:
-            $ref: '#/definitions/Error'
 definitions:
   Event:
     required:
@@ -109,13 +105,3 @@ definitions:
       url:
         type: string
         format: uri
-  Error:
-    required:
-      - code
-      - message
-    properties:
-      code:
-        type: integer
-        format: int32
-      message:
-        type: string
