@@ -36,71 +36,75 @@ paths:
           examples:
             application/json:
               events:
-                - type: "meetup"
-                  title: "Melbourne CocoaHeads #104"
-                  subtitle: "Melbourne CocoaHeads Meetup"
-                  starts_at: "2017-04-13 08:30:00"
-                  ends_at: "2017-04-13 11:30:00"
-                  location: "Outware"
-                  location_link: "http://www.outware.com.au/contact"
+                - address: "Level 3, 469 La Trobe Street, Melbourne VIC 3000"
                   address_display: "Level 3, 469 La Trobe Street, Melbourne"
-                  address: "Level 3, 469 La Trobe Street, Melbourne VIC 3000"
-                  lat: -37.8126541
-                  lng: 144.9551303
-                  tickets: "https://www.meetup.com/Melbourne-CocoaHeads/"
                   contact: "mailto:jesse@jcmultimedia.com.au"
                   contact_name: "Jesse Collis"
+                  ends_at: "2017-04-13T11:30:00+0000"
+                  event_type: "meetup"
+                  lat: -37.8126541
+                  lng: 144.9551303
+                  location: "Outware"
+                  location_link: "http://www.outware.com.au/contact"
+                  starts_at: "2017-04-13T08:30:00+0000"
+                  subtitle: "Melbourne CocoaHeads Meetup"
+                  tickets: "https://www.meetup.com/Melbourne-CocoaHeads/"
+                  title: "Melbourne CocoaHeads #104"
                   url: "https://www.melbournecocoaheads.com/events/meetup-2017-04-13"
 definitions:
   Event:
     required:
-      - type
-      - title
-      - starts_at
-      - location
-      - location_link
-      - address_display
       - address
-      - lat
-      - lng
-      - tickets
+      - address_display
       - contact
       - contact_name
+      - event_type
+      - lat
+      - lng
+      - location
+      - location_link
+      - starts_at
+      - subtitle
+      - tickets
+      - title
+      - url
     properties:
-      type:
+      address:
+        type: string
+      address_display: 
+        type: string
+      contact:
+        type: string
+      contact_name:
+        type: string
+      ends_at:
+        type: string
+        format: dateTime
+      event_type:
         type: string
         enum:
           - meetup
           - hacknight
-      title:
-        type: string
-      subtitle:
-        type: string
-      starts_at:
-        type: string
-        format: dateTime
-      ends_at:
-        type: string
-        format: dateTime
-      location:
-        type: string
-      location_link:
-        type: string
-        format: uri
-      address_display: 
-        type: string
-      address:
-        type: string
       lat: 
         type: number
         format: double
       lng:
         type: number
         format: double
+      location:
+        type: string
+      location_link:
+        type: string
+        format: uri
+      starts_at:
+        type: string
+        format: dateTime
+      subtitle:
+        type: string 
       tickets:
         type: string
         format: uri
-      contact:
+      title:
         type: string
       url:
         type: string
