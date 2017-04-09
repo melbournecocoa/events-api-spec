@@ -1,5 +1,9 @@
 # Melbourne CocoaHeads Events API Spec
 
+## Swagger 2.0
+
+This spec is written using the [Swagger/OpenAPI 2.0 spec][5]. 
+
 ## Online Documentation
 
 Documentation is available at http://docs.melbournecocoaheads.apiary.io
@@ -39,3 +43,4 @@ swagger-codegen generate -i swagger.yaml -l swift3 -o ApiClient
 [2]: https://dredd.readthedocs.io
 [3]: https://github.com/creationix/nvm
 [4]: https://paw.pt/cfikVJT4
+[5]: https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md
