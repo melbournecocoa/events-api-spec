@@ -24,15 +24,13 @@ paths:
     get:
       description: Returns all published, upcoming events.
       operationId: getEvents
+      tags:
+        - Events
       responses:
         200:
           description: lists of hacknights and meetups
           schema:
-            properties:
-              events:
-                type: array
-                items:
-                  $ref: '#/definitions/Event'
+            $ref: "#/definitions/EventsResponse"
           examples:
             application/json:
               events:
@@ -52,6 +50,12 @@ paths:
                   title: "Melbourne CocoaHeads #104"
                   url: "https://www.melbournecocoaheads.com/events/meetup-2017-04-13"
 definitions:
+  EventsResponse:
+    properties:
+      events:
+        type: array
+        items:
+          $ref: '#/definitions/Event'
   Event:
     required:
       - address
