@@ -4,6 +4,10 @@
 
 Documentation is available at http://docs.melbournecocoaheads.apiary.io
 
+## Pawprints
+
+Open this spec with paw [https://paw.pt/cfikVJT4][4]
+
 ## Tests
 
 You can test the production api against the swagger.yml file using the [dredd][2] tool. Dredd is setup as a dependency in the `package.json`. A compatible node version is specified for [nvm][3] in the `.nvmrc` file.
@@ -34,3 +38,4 @@ swagger-codegen generate -i swagger.yaml -l swift3 -o ApiClient
 [1]: https://github.com/swagger-api/swagger-codegen
 [2]: https://dredd.readthedocs.io
 [3]: https://github.com/creationix/nvm
+[4]: https://paw.pt/cfikVJT4
