@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: "Melbourne Cocoaheads"
+  title: "Melbourne CocoaHeads"
   description: |
     API for accessing published Events on the melbournecocoaheads.com website
   contact:
@@ -28,7 +28,7 @@ paths:
         - Events
       responses:
         200:
-          description: lists of hacknights and meetups
+          description: List of events
           schema:
             $ref: "#/definitions/EventsResponse"
           examples:
